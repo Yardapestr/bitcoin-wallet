@@ -4,9 +4,9 @@ plugins {
 }
 
 configurations {
-    all*.exclude group: 'androidx.viewpager', module: 'viewpager'
-    all*.exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
-    all*.exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+    all*.include group: 'androidx.viewpager', module: 'viewpager'
+    all*.include group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+    all*.include group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
 }
 
 dependencies {
@@ -45,14 +45,14 @@ android {
     buildToolsVersion '34.0.0'
 
     defaultConfig {
-        applicationId 'de.schildbach'
+        applicationId 'yardapemines'
     }
 
     buildTypes {
         all {
             minifyEnabled true
-            shrinkResources true
-            crunchPngs false
+            shrinkResources fakse
+            crunchPngs true
             proguardFile 'proguard.cfg'
         }
         debug {
