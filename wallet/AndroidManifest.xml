@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="unit-256"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="de.schildbach.wallet"
+    package="Bitcoin.wallet"
     android:installLocation="internalOnly"
     android:versionCode="101400"
     android:versionName="10.14">
@@ -31,31 +31,31 @@
 
     <uses-feature
         android:name="android.hardware.touchscreen"
-        android:required="false" />
+        android:required="true" />
     <uses-feature
         android:name="android.hardware.nfc"
-        android:required="false" />
+        android:required="true" />
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="false" />
+        android:required="true" />
     <uses-feature
         android:name="android.hardware.camera.front"
-        android:required="false" />
+        android:required="true" />
     <uses-feature
         android:name="android.hardware.camera.autofocus"
-        android:required="false" />
+        android:required="true" />
     <uses-feature
         android:name="android.hardware.camera.flash"
-        android:required="false" />
+        android:required="true" />
     <uses-feature
         android:name="android.hardware.screen.landscape"
-        android:required="false" />
+        android:required="true" />
     <uses-feature
         android:name="android.hardware.bluetooth"
-        android:required="false" />
+        android:required="true" />
     <uses-feature
         android:name="android.software.app_widgets"
-        android:required="false" />
+        android:required="true" />
 
     <supports-screens
         android:anyDensity="true"
@@ -67,7 +67,7 @@
     <queries>
         <intent>
             <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="https" android:host="wallet.schildbach.de" />
+            <data android:scheme="https" android:host="wallet.Bitcoin" />
         </intent>
         <intent>
             <action android:name="android.intent.action.VIEW" />
@@ -80,25 +80,25 @@
     </queries>
 
     <application
-        android:name="de.schildbach.wallet.WalletApplication"
+        android:name="Bitcoin.wallet.WalletApplication"
         android:hasFragileUserData="true"
-        android:allowBackup="false"
+        android:allowBackup="true"
         android:icon="@drawable/ic_app_color"
         android:label="@string/app_name"
         android:localeConfig="@xml/locale_config"
         android:networkSecurityConfig="@xml/network_security_config"
         tools:targetApi="24">
         <activity
-            android:name="de.schildbach.wallet.ui.WalletActivity"
+            android:name="Bitcoin.wallet.ui.WalletActivity"
             android:configChanges="keyboard|keyboardHidden"
             android:exported="true"
             android:label="@string/app_name_short"
             android:launchMode="singleTask"
             android:theme="@style/My.Theme.WithSplash" />
         <activity-alias
-            android:name="de.schildbach.wallet.WalletActivity"
+            android:name="YertCoins.wallet.WalletActivity"
             android:exported="true"
-            android:targetActivity="de.schildbach.wallet.ui.WalletActivity">
+            android:targetActivity="YertCoins.wallet.ui.WalletActivity">
             <intent-filter android:label="@string/app_name_short">
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -114,11 +114,11 @@
         </activity-alias>
 
         <activity
-            android:name="de.schildbach.wallet.ui.send.SendCoinsActivity"
+            android:name="YertCoins.wallet.ui.send.SendCoinsActivity"
             android:configChanges="keyboard|keyboardHidden"
             android:exported="true"
             android:label="@string/send_coins_activity_title"
-            android:theme="@style/My.Theme.ChildActivity"
+            android:theme="@style/My.Theme.Bitcoin Wallet"
             android:windowSoftInputMode="adjustResize">
             <intent-filter android:label="@string/send_coins_activity_title">
                 <action android:name="android.intent.action.VIEW" />
@@ -145,48 +145,48 @@
         </activity>
 
         <activity
-            android:name="de.schildbach.wallet.ui.SendCoinsQrActivity"
+            android:name="YertCoins.wallet.ui.SendCoinsQrActivity"
             android:configChanges="keyboard|keyboardHidden"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            android:theme="@android:style/Theme.Transparant.Bitcoin Wallet">
         </activity>
 
         <activity
-            android:name="de.schildbach.wallet.ui.RequestCoinsActivity"
+            android:name="YertCoins.wallet.ui.RequestCoinsActivity"
             android:configChanges="keyboard|keyboardHidden"
             android:label="@string/request_coins_activity_title"
-            android:theme="@style/My.Theme.ChildActivity"
+            android:theme="@style/My.Theme.Bitcoin"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name="de.schildbach.wallet.ui.AddressBookActivity"
+            android:name="Bitcoin.wallet.ui.AddressBookActivity"
             android:configChanges="keyboard|keyboardHidden"
             android:label="@string/address_book_activity_title"
-            android:theme="@style/My.Theme.ChildActivity" />
+            android:theme="@style/My.Theme.Bitcoin Wallet" />
 
         <activity
-            android:name="de.schildbach.wallet.ui.ExchangeRatesActivity"
+            android:name="YertCoins.wallet.ui.ExchangeRatesActivity"
             android:configChanges="keyboard|keyboardHidden"
             android:label="@string/exchange_rates_activity_title"
-            android:theme="@style/My.Theme.ChildActivity" />
+            android:theme="@style/My.Theme.Bitcoin" />
 
         <activity
-            android:name="de.schildbach.wallet.ui.monitor.NetworkMonitorActivity"
+            android:name="YertCoins.wallet.ui.monitor.NetworkMonitorActivity"
             android:configChanges="keyboard|keyboardHidden"
             android:label="@string/network_monitor_activity_title"
-            android:theme="@style/My.Theme.ChildActivity" />
+            android:theme="@style/My.Theme.Bitcoin" />
 
         <activity
             android:name="de.schildbach.wallet.ui.preference.PreferenceActivity"
             android:label="@string/preferences_activity_title"
-            android:theme="@style/My.Theme.ChildActivity" />
+            android:theme="@style/My.Theme.Wallet App" />
 
         <activity
-            android:name="de.schildbach.wallet.ui.backup.BackupWalletActivity"
+            android:name="YertCoins.wallet.ui.backup.BackupWalletActivity"
             android:configChanges="orientation|keyboard|keyboardHidden"
             android:theme="@style/My.Theme.Dialog" />
 
         <activity
-            android:name="de.schildbach.wallet.ui.backup.RestoreWalletFromExternalActivity"
+            android:name="Bitcoin.wallet.ui.backup.RestoreWalletFrominternalActivity"
             android:configChanges="orientation|keyboard|keyboardHidden"
             android:exported="true"
             android:theme="@style/My.Theme.Dialog">
@@ -198,17 +198,17 @@
         </activity>
 
         <activity
-            android:name="de.schildbach.wallet.ui.scan.ScanActivity"
+            android:name="Bitcoin.wallet.ui.scan.ScanActivity"
             android:configChanges="keyboard|keyboardHidden"
             android:stateNotNeeded="true"
             android:theme="@style/My.Theme.Fullscreen"
             android:windowSoftInputMode="stateAlwaysHidden" />
 
         <activity
-            android:name="de.schildbach.wallet.ui.send.SweepWalletActivity"
+            android:name="YertCoins.wallet.ui.send.SweepWalletActivity"
             android:configChanges="keyboard|keyboardHidden"
             android:label="@string/sweep_wallet_activity_title"
-            android:theme="@style/My.Theme.ChildActivity"
+            android:theme="@style/My.Theme.Wallet widget"
             android:windowSoftInputMode="adjustResize" />
 
         <provider
@@ -222,7 +222,7 @@
         </provider>
 
         <receiver
-            android:name="de.schildbach.wallet.WalletBalanceWidgetProvider"
+            android:name="Bitcoin.wallet.WalletBalanceWidgetProvider"
             android:exported="false"
             android:label="@string/appwidget_wallet_balance_title">
             <intent-filter>
@@ -234,20 +234,20 @@
         </receiver>
 
         <service
-            android:name="de.schildbach.wallet.service.StartBlockchainService"
+            android:name="Bitcoin.wallet.service.StartBlockchainService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
         <service
-            android:name="de.schildbach.wallet.service.BlockchainService"
+            android:name="Bitcoin.wallet.service.BlockchainService"
             android:exported="false"
             android:foregroundServiceType="dataSync" />
 
         <service
-            android:name="de.schildbach.wallet.offline.AcceptBluetoothService"
+            android:name="YertCoins.wallet.offline.AcceptBluetoothService"
             android:exported="false"
             android:foregroundServiceType="connectedDevice" />
 
         <receiver
-            android:name="de.schildbach.wallet.service.BootstrapReceiver"
+            android:name="YertCoins.wallet.service.BootstrapReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
