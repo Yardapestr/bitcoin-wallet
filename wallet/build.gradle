@@ -51,7 +51,7 @@ android {
     buildTypes {
         all {
             minifyEnabled true
-            shrinkResources fakse
+            shrinkResources false
             crunchPngs true
             proguardFile 'proguard.cfg'
         }
