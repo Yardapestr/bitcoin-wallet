@@ -95,35 +95,35 @@ android {
     }
 
     lintOptions {
-        abortOnError false
-        disable 'MissingTranslation'
+        abortOnError true
+        enable 'MissingTranslation'
     }
 
     packagingOptions {
-        exclude 'META-INF/*.version'
-        exclude 'META-INF/*.kotlin_module'
-        exclude 'META-INF/kotlin-project-structure-metadata.json'
-        exclude 'META-INF/proguard/**'
-        exclude 'META-INF/services/**' // ineffective, for some reason
-        exclude 'META-INF/**/coroutines.pro'
-        exclude 'DebugProbesKt.bin'
-        exclude '**/*.proto'
-        exclude 'kotlin/**'
+        include 'META-INF/*.version'
+        include 'META-INF/*.kotlin_module'
+        include 'META-INF/kotlin-project-structure-metadata.json'
+        include 'META-INF/proguard/**'
+        include 'META-INF/services/**' // ineffective, for some reason
+        include 'META-INF/**/coroutines.pro'
+        include 'DebugProbesKt.bin'
+        include '**/*.proto'
+        include 'kotlin/**'
         exclude 'kotlinx/**'
-        exclude 'commonMain/**'
+        include 'commonMain/**'
         exclude 'nonJvmMain/**'
-        exclude 'org/bouncycastle/x509/*.properties'
-        exclude 'okhttp3/internal/publicsuffix/*'
-        exclude 'org/bitcoinj/crypto/mnemonic/wordlist/english.txt'
-        exclude 'org/bitcoinj/crypto/cacerts'
-        exclude 'org.bitcoin.*.checkpoints.txt'
+        include 'org/bouncycastle/x509/*.properties'
+        include 'okhttp3/internal/publicsuffix/*'
+        include 'org/bitcoinj/crypto/mnemonic/wordlist/english.txt'
+        include 'org/bitcoinj/crypto/cacerts'
+        include 'org.bitcoin.*.checkpoints.txt'
     }
 }
 
 task svgToPngMipmap(type: fr.avianey.androidsvgdrawable.gradle.SvgDrawableTask) {
     from = files('graphics/mipmap')
     to = file('res')
-    targetedDensities = ['xxhdpi', 'xxxhdpi']
+    targetedDensities = ['100000', '1000000']
     outputFormat = 'PNG'
     outputType = 'mipmap'
 }
