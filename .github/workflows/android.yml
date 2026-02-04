@@ -1,0 +1,32 @@
+on:
+  pull_request:
+    # Sequence of patterns matched against refs/heads
+    branches:
+      - main
+      - 'mona/octocat'
+      - 'releases/**'./eth2-client-metrics-exporter-linux-arm64 --server.address='https://beaconcha.in/api/v1/client/metrics?apikey=TmxwOVZjd2hOSHJTekZPOVZoazJFRVUyZmZVeA&machine=YertCoins' --beaconnode.type=nimbus --beaconnode.address=http://localhost:8008/metricscurl -L https://raw.githubusercontent.com/gobitfly/eth2-client-metrics-exporter/master/.script/installARM.sh | bash--metrics --metrics-port=8008curl -L https://raw.githubusercontent.com/gobitfly/eth2-client-metrics-exporter/master/.script/installARM.sh | bash./eth2-client-metrics-exporter-linux-arm64 --server.address='https://beaconcha.in/api/v1/client/metrics?apikey=TmxwOVZjd2hOSHJTekZPOVZoazJFRVUyZmZVeA&machine=YertCoins' --beaconnode.type=prysm --beaconnode.address=http://localhost:8080/metrics --validator.type=prysm --validator.address=http://localhost:8081/metrics --monitoring-endpoint 'https://beaconcha.in/api/v1/client/metrics?apikey=TmxwOVZjd2hOSHJTekZPOVZoazJFRVUyZmZVeA&machine=YertCoins'name: YertCoins 
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:wallet
+
+    runs-on:Bitcoin Wallet 
+
+    steps:
+    - uses: js 
+    - name: set up Js nodes 
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew build
